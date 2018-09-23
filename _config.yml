@@ -2,25 +2,26 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: http://yuwen.li
 date_format: "ordinal"
-title: 码志
-subtitle: "打码改变人生"
-description: "马壮的个人博客"
+title: YWL's Blog
+subtitle: "Warning:nuclear silo detected."
+description: "ywl的个人博客"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 5
+side_bar_repo_limit: 2
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
-organization: zkh360.com
-organization_url: http://www.zkh360.com
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+author: Yu Wenli
+organization: somewhere~
+organization_url: http://map.baidu.com?s=%E6%B7%B1%E5%9C%B3
+github_username: ywl0911
+location: Shenzhen, China
+location_url:
+email: yuwenli0911@gmail.com
 
 # ---------------- #
 #    Navigation    #
@@ -28,27 +29,27 @@ email: chumpma@gmail.com
 navs:
   -
     href: /
-    label: 首页
+    label: Home
 
   -
     href: /categories/
-    label: 分类
+    label: Categories
 
 #   -
 #     href: /archives/
 #     label: 归档
 
-  -
-    href: /wiki/
-    label: 维基
-
-  -
-    href: /links/
-    label: 链接
+#  -
+#    href: /wiki/
+#    label: Wiki
+#
+#  -
+#    href: /links/
+#    label: Links
 
   -
     href: /about/
-    label: 关于
+    label: About
 
 # ---------------- #
 #       RSS        #
@@ -81,7 +82,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: mzlogin/mzlogin.github.io
+repository: ywl0911/ywl0911.github.io
 
 # ---------------- #
 #      Comments    #
@@ -92,20 +93,20 @@ comments_provider: gitalk
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: 
+    username: ywl0911
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mzlogin
+    owner: ywl0911
     repo: blog-comments
     oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+        client_id: 6b2a8fbd65a0a2462a0e
+        client_secret: 763bb8f2c84f67a9b3997fd502b3ce77b7c361bc
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
+    owner: ywl0911
     repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    clientID: d3ed11c8856d00676d0e
+    clientSecret: 4f8e461bd4691429d6f25c836d4bd6ef79a32f81
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -114,9 +115,9 @@ lazy_load_disqus : false
 # ---------------- #
 simple_jekyll_search:
     # 是否支持全文搜索
-    fulltext: false
+    fulltext: true
     # 最多显示多少条搜索结果
-    limit: 10
+    limit: 20
 
 # ---------------- #
 #    Analytics     #
