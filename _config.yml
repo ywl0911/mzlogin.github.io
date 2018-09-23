@@ -4,9 +4,9 @@
 baseurl:
 url: https://yuwen.li
 date_format: "ordinal"
-title: 码志
-subtitle: "打码改变人生"
-description: "马壮的个人博客"
+title: YWL's Blog
+subtitle: "Warning:nuclear silo detected."
+description: "ywl的个人博客"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang
 timezone: Asia/Shanghai
 encoding: "utf-8"
