@@ -4,6 +4,8 @@ title: Numpy和Tensorflow中矩阵运算的broadcast机制
 categories: TensorFlow python
 description: Numpy和Tensorflow中的广播机制
 keywords: python TensorFlow
+mathjax: true
+
 ---
 
 
