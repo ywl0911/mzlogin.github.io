@@ -193,10 +193,6 @@ a首先由np.array([1,2,3])进行初始化，此时a的shape为(3,)，a1的shape
 所以a是一个非常灵活的数据结构。
 
 ## 4 附录
-
-When $$(a \ne 0)$$, there are two solutions to $$(ax^2 + bx + c = 0)$$ and they are
-
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 Numpy或tensorflow中的常用的矩阵乘法函数，对于array对象(注意不是matrix对象)：
 + tf.matmul(A,B)和np.matmul(A,B)和`@`云算法表示一般的矩阵乘法，即A<sub>p×q </sub>* B<sub>q×r</sub> = C<sub>p×r</sub>
 + tf.multiply(A,B)、np.multiply(A,B)，按位(element-wise)运算，即对应位置相乘，支持broadcast，如 A<sub>p×q </sub>* B<sub>p×q</sub> = C<sub>p×q</sub> ，此外四则运算符`+`/`-`/`×`/`÷`都是按位进行运算。
