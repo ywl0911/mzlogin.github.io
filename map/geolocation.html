@@ -1,0 +1,188 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Geolocation</title>
+    <link rel="stylesheet" href="./js/ol.css" type="text/css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/sha1.min.js"></script>
+    <!-- <script src="./js/jweixin-1.2.0.js"></script>
+    <script src="js/wxcfg_data.js"></script> -->
+    <script src="./js/ol.js"></script>
+    <style type="text/css">
+        html,
+        body,
+        .map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" class="map"></div>
+    <div id="info" style="display: none;"></div>
+    <div style="position: absolute;top:5px;right: 5px;;background-color: aliceblue;padding: 0 5px 0 5px;">
+        <label for="track" style="display: none">
+            track position
+            <input id="track" type="checkbox" />
+        </label>
+        <!-- <p style="font: italic bold 20px/20px arial,sans-serif">
+           position accuracy :
+            <code id="accuracy"></code>&nbsp;&nbsp; altitude :
+            <code id="altitude"></code>&nbsp;&nbsp; altitude accuracy :
+            <code id="altitudeAccuracy"></code>&nbsp;&nbsp; heading :
+            <code id="heading"></code>&nbsp;&nbsp; speed :
+            <code id="speed"></code>
+        </p> -->
+        <p style="font: italic bold 12px/20px arial,sans-serif">
+            精度:
+            <code id="accuracy"></code>&nbsp;&nbsp; 方向:
+            <code id="heading"></code>&nbsp;&nbsp; 速度:
+            <code id="speed"></code>
+        </p>
+    </div>
+    <script>
+
+        // var $wx_account = wxdata.wx_account;
+        // wx.config({
+        //     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        //     appId: $wx_account[0], // 必填，公众号的唯一标识
+        //     timestamp: $wx_account[1], // 必填，生成签名的时间戳
+        //     nonceStr: $wx_account[2], // 必填，生成签名的随机串
+        //     signature: $wx_account[3],// 必填，签名
+        //     jsApiList: [
+        //         'openLocation',
+        //         'getLocation'
+        //     ] // 必填，需要使用的JS接口列表
+        // });
+
+        // wx.ready(function () {
+        //     wx.getLocation({
+        //         type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+        //         success: function (res) {
+        //             var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+        //             var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+        //             var speed = res.speed; // 速度，以米/每秒计
+        //             var accuracy = res.accuracy; // 位置精度
+        //         }
+        //     });
+        // });
+        // wx.error(function (err) {
+        //     console.log(err);
+        // });
+        var view = new ol.View({
+            center: [0, 0],
+            zoom: 10,
+            minZoom: 1,
+            maxZoom: 18
+        });
+
+        var map = new ol.Map({
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            target: 'map',
+            controls: ol.control.defaults({
+                attributionOptions: {
+                    collapsible: false
+                }
+            }),
+            view: view
+        });
+
+        var geolocation = new ol.Geolocation({
+            projection: view.getProjection()
+        });
+
+        function el(id) {
+            return document.getElementById(id);
+        }
+
+        el('track').addEventListener('change', function () {
+            geolocation.setTracking(this.checked);
+        });
+
+        var positionFeature = new ol.Feature({ speed: '', heading: '' });
+        positionFeature.setStyle(new ol.style.Style({
+            image: new ol.style.Circle({
+                radius: 6,
+                fill: new ol.style.Fill({
+                    color: '#3399CC'
+                }),
+                stroke: new ol.style.Stroke({
+                    color: '#fff',
+                    width: 2
+                })
+            })
+        }));
+
+        // update the HTML page when the position changes.
+        geolocation.on('change', function () {
+            el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
+            // el('altitude').innerText = geolocation.getAltitude() + ' [m]';
+            // el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
+            const _oHeading = geolocation.getHeading() ? geolocation.getHeading() : 0;
+            el('heading').innerText = _oHeading * 57.3 + ' [°]';
+            const _oSpeed = geolocation.getSpeed() ? geolocation.getSpeed() : 0;
+            const _speed = _oSpeed <= 5 ? _oSpeed.toFixed(2) + ' [m/s]' : (_oSpeed * 3.6).toFixed(2) + ' [km/h]'
+            el('speed').innerText = _speed;
+        });
+
+        // handle geolocation error.
+        geolocation.on('error', function (error) {
+            var info = document.getElementById('info');
+            info.innerHTML = error.message;
+            info.style.display = '';
+        });
+
+        var accuracyFeature = new ol.Feature();
+        geolocation.on('change:accuracyGeometry', function () {
+            accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+        });
+
+
+
+        geolocation.on('change:position', function () {
+            var coordinates = geolocation.getPosition();
+            map.getView().setCenter(coordinates);
+            positionFeature.setGeometry(coordinates ?
+                new ol.geom.Point(coordinates) : null);
+
+            positionFeature.set('speed', geolocation.getSpeed() + ' [m/s]');
+            positionFeature.set('heading', geolocation.getHeading() + ' [rad]');
+            //const _txt = '速度：' + positionFeature.get('speed');
+            // positionFeature.getStyle().setText(new ol.style.Text({
+            //     text: _txt,
+            //     font: '30px sans-serif',
+            //     fill: new ol.style.Fill({
+            //         color: '#ffffff'
+            //     }),
+            //     offsetY: -40,
+            //     backgroundFill: new ol.style.Fill({
+            //         color: '#6fa0e5'
+            //     })
+            // }));
+
+        });
+
+        new ol.layer.Vector({
+            map: map,
+            source: new ol.source.Vector({
+                features: [accuracyFeature, positionFeature]
+            })
+        });
+        window.onload = function () {
+            document.getElementById('track').checked = true;
+            geolocation.setTracking(true);
+        };
+    </script>
+</body>
+
+</html>

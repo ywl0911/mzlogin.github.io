@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GAIA Map API</title>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/jquery.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/"><img src="logo-70x70.png"> GAIA Map</a> 
+      <!--<ul class="nav navbar-nav pull-right">
+        <li><a href="../doc">Docs</a></li>
+        <li><a href="../examples">Examples</a></li>
+        <li><a href="index.html" class="active">API</a></li>
+        <li><a href="https://github.com/openlayers/openlayers">Code</a></li>
+      </ul>-->
+    </div>
+  </div>
+</div>
+
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentation">
+    </div>
+    <ul class="list">
+    
+        <li class="item" data-name="gaia">
+            <span class="title">
+                <a href="gaia.html">gaia</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.Constant">
+            <span class="title">
+                <a href="gaia.Constant.html">gaia.Constant</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.Constant.analysisLastDays"><a href="gaia.Constant.html#.analysisLastDays">analysisLastDays</a></li>
+            
+                <li data-name="gaia.Constant.analysisStartTime"><a href="gaia.Constant.html#.analysisStartTime">analysisStartTime</a></li>
+            
+                <li data-name="gaia.Constant.analysisUrl"><a href="gaia.Constant.html#.analysisUrl">analysisUrl</a></li>
+            
+                <li data-name="gaia.Constant.featureInvalidInterval"><a href="gaia.Constant.html#.featureInvalidInterval">featureInvalidInterval</a></li>
+            
+                <li data-name="gaia.Constant.type"><a href="gaia.Constant.html#.type">type</a></li>
+            
+                <li data-name="gaia.Constant.wifiFloor"><a href="gaia.Constant.html#.wifiFloor">wifiFloor</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.Constant.getDateNow" class="">
+                    <a href="gaia.Constant.html#.getDateNow">getDateNow</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getDateNowStr" class="">
+                    <a href="gaia.Constant.html#.getDateNowStr">getDateNowStr</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getDateStr" class="">
+                    <a href="gaia.Constant.html#.getDateStr">getDateStr</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getDatetimeStr" class="">
+                    <a href="gaia.Constant.html#.getDatetimeStr">getDatetimeStr</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getTimeNowStr" class="">
+                    <a href="gaia.Constant.html#.getTimeNowStr">getTimeNowStr</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getYestodayStr" class="">
+                    <a href="gaia.Constant.html#.getYestodayStr">getYestodayStr</a>
+                </li>
+            
+                <li data-name="gaia.Constant.getYestodayTimeStr" class="">
+                    <a href="gaia.Constant.html#.getYestodayTimeStr">getYestodayTimeStr</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.CustomerMap">
+            <span class="title">
+                <a href="gaia.CustomerMap.html">gaia.CustomerMap</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.CustomerMap#mapControl"><a href="gaia.CustomerMap.html#mapControl">mapControl</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.MapControl">
+            <span class="title">
+                <a href="gaia.MapControl.html">gaia.MapControl</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.MapControl#baseLayer"><a href="gaia.MapControl.html#baseLayer">baseLayer</a></li>
+            
+                <li data-name="gaia.MapControl#displayAround"><a href="gaia.MapControl.html#displayAround">displayAround</a></li>
+            
+                <li data-name="gaia.MapControl#enableAutoAround"><a href="gaia.MapControl.html#enableAutoAround">enableAutoAround</a></li>
+            
+                <li data-name="gaia.MapControl#enableDataFilter"><a href="gaia.MapControl.html#enableDataFilter">enableDataFilter</a></li>
+            
+                <li data-name="gaia.MapControl#enableEdit"><a href="gaia.MapControl.html#enableEdit">enableEdit</a></li>
+            
+                <li data-name="gaia.MapControl#enablePopup"><a href="gaia.MapControl.html#enablePopup">enablePopup</a></li>
+            
+                <li data-name="gaia.MapControl#id"><a href="gaia.MapControl.html#id">id</a></li>
+            
+                <li data-name="gaia.MapControl#isScaleLine"><a href="gaia.MapControl.html#isScaleLine">isScaleLine</a></li>
+            
+                <li data-name="gaia.MapControl#map"><a href="gaia.MapControl.html#map">map</a></li>
+            
+                <li data-name="gaia.MapControl#showActiveLayer"><a href="gaia.MapControl.html#showActiveLayer">showActiveLayer</a></li>
+            
+                <li data-name="gaia.MapControl#showFacility"><a href="gaia.MapControl.html#showFacility">showFacility</a></li>
+            
+                <li data-name="gaia.MapControl#showPassengerReviewLayer"><a href="gaia.MapControl.html#showPassengerReviewLayer">showPassengerReviewLayer</a></li>
+            
+                <li data-name="gaia.MapControl#showTraffikGridLayer"><a href="gaia.MapControl.html#showTraffikGridLayer">showTraffikGridLayer</a></li>
+            
+                <li data-name="gaia.MapControl#showTraffikStoreLayer"><a href="gaia.MapControl.html#showTraffikStoreLayer">showTraffikStoreLayer</a></li>
+            
+                <li data-name="gaia.MapControl#showTraffikStoreLayer"><a href="gaia.MapControl.html#showTraffikStoreLayer">showTraffikStoreLayer</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.MapControl#getSelectedLayer" class="">
+                    <a href="gaia.MapControl.html#getSelectedLayer">getSelectedLayer</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#init" class="">
+                    <a href="gaia.MapControl.html#init">init</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#initConfigCallback" class="">
+                    <a href="gaia.MapControl.html#initConfigCallback">initConfigCallback</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#loadBaseLayerCallBack" class="">
+                    <a href="gaia.MapControl.html#loadBaseLayerCallBack">loadBaseLayerCallBack</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#setSelectedLayer" class="">
+                    <a href="gaia.MapControl.html#setSelectedLayer">setSelectedLayer</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#viewAround" class="">
+                    <a href="gaia.MapControl.html#viewAround">viewAround</a>
+                </li>
+            
+                <li data-name="gaia.MapControl#viewEntire" class="">
+                    <a href="gaia.MapControl.html#viewEntire">viewEntire</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            <span class="subtitle">Fires</span>
+            
+                <li data-name="gaia.events.Event#event:postbaselayer" class="">
+                    <a href="gaia.events.Event.html#event:postbaselayer">postbaselayer</a>
+                </li>
+            
+                <li data-name="gaia.events.Event#event:postmap" class="">
+                    <a href="gaia.events.Event.html#event:postmap">postmap</a>
+                </li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.MapControl.data">
+            <span class="title">
+                <a href="gaia.MapControl.data.html">gaia.MapControl.data</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.MapControl.data#activeLayer"><a href="gaia.MapControl.data.html#activeLayer">activeLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#baseLayer"><a href="gaia.MapControl.data.html#baseLayer">baseLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#facilityLayer"><a href="gaia.MapControl.data.html#facilityLayer">facilityLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#gridLayer"><a href="gaia.MapControl.data.html#gridLayer">gridLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#imageLayer"><a href="gaia.MapControl.data.html#imageLayer">imageLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#measureLayer"><a href="gaia.MapControl.data.html#measureLayer">measureLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#orialPos"><a href="gaia.MapControl.data.html#orialPos">orialPos</a></li>
+            
+                <li data-name="gaia.MapControl.data#param"><a href="gaia.MapControl.data.html#param">param</a></li>
+            
+                <li data-name="gaia.MapControl.data#pos"><a href="gaia.MapControl.data.html#pos">pos</a></li>
+            
+                <li data-name="gaia.MapControl.data#themeLayer"><a href="gaia.MapControl.data.html#themeLayer">themeLayer</a></li>
+            
+                <li data-name="gaia.MapControl.data#zoom"><a href="gaia.MapControl.data.html#zoom">zoom</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.MapManager">
+            <span class="title">
+                <a href="gaia.MapManager.html">gaia.MapManager</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.MapManager.mapArray"><a href="gaia.MapManager.html#.mapArray">mapArray</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.MapManager.create" class="">
+                    <a href="gaia.MapManager.html#.create">create</a>
+                </li>
+            
+                <li data-name="gaia.MapManager~exists" class="">
+                    <a href="gaia.MapManager.html#~exists">exists</a>
+                </li>
+            
+                <li data-name="gaia.MapManager~find" class="">
+                    <a href="gaia.MapManager.html#~find">find</a>
+                </li>
+            
+                <li data-name="gaia.MapManager~remove" class="">
+                    <a href="gaia.MapManager.html#~remove">remove</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.MapWinForm">
+            <span class="title">
+                <a href="gaia.MapWinForm.html">gaia.MapWinForm</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.MapWinForm#mapControl"><a href="gaia.MapWinForm.html#mapControl">mapControl</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.Observable">
+            <span class="title">
+                <a href="gaia.Observable.html">gaia.Observable</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.Request">
+            <span class="title">
+                <a href="gaia.Request.html">gaia.Request</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.Request#getAllFeatures" class="">
+                    <a href="gaia.Request.html#getAllFeatures">getAllFeatures</a>
+                </li>
+            
+                <li data-name="gaia.Request#getAllSMFeatures" class="">
+                    <a href="gaia.Request.html#getAllSMFeatures">getAllSMFeatures</a>
+                </li>
+            
+                <li data-name="gaia.Request#getFeaturesByBounds" class="">
+                    <a href="gaia.Request.html#getFeaturesByBounds">getFeaturesByBounds</a>
+                </li>
+            
+                <li data-name="gaia.Request#getFeaturesByGeometry" class="">
+                    <a href="gaia.Request.html#getFeaturesByGeometry">getFeaturesByGeometry</a>
+                </li>
+            
+                <li data-name="gaia.Request#getFeaturesBySQL" class="">
+                    <a href="gaia.Request.html#getFeaturesBySQL">getFeaturesBySQL</a>
+                </li>
+            
+                <li data-name="gaia.Request#getGridValue" class="">
+                    <a href="gaia.Request.html#getGridValue">getGridValue</a>
+                </li>
+            
+                <li data-name="gaia.Request#getGridValue" class="">
+                    <a href="gaia.Request.html#getGridValue">getGridValue</a>
+                </li>
+            
+                <li data-name="gaia.Request#getThemeKeyByUnitCode" class="">
+                    <a href="gaia.Request.html#getThemeKeyByUnitCode">getThemeKeyByUnitCode</a>
+                </li>
+            
+                <li data-name="gaia.Request#getThemeKeyByUnitCode" class="">
+                    <a href="gaia.Request.html#getThemeKeyByUnitCode">getThemeKeyByUnitCode</a>
+                </li>
+            
+                <li data-name="gaia.Request#initMapControlByFloor" class="">
+                    <a href="gaia.Request.html#initMapControlByFloor">initMapControlByFloor</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.Util">
+            <span class="title">
+                <a href="gaia.Util.html">gaia.Util</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.Util.getAttribute" class="">
+                    <a href="gaia.Util.html#.getAttribute">getAttribute</a>
+                </li>
+            
+                <li data-name="gaia.Util.getDataKey" class="">
+                    <a href="gaia.Util.html#.getDataKey">getDataKey</a>
+                </li>
+            
+                <li data-name="gaia.Util.getDataset" class="">
+                    <a href="gaia.Util.html#.getDataset">getDataset</a>
+                </li>
+            
+                <li data-name="gaia.Util.getDatasetName" class="">
+                    <a href="gaia.Util.html#.getDatasetName">getDatasetName</a>
+                </li>
+            
+                <li data-name="gaia.Util.getDatasource" class="">
+                    <a href="gaia.Util.html#.getDatasource">getDatasource</a>
+                </li>
+            
+                <li data-name="gaia.Util.getDatasourceName" class="">
+                    <a href="gaia.Util.html#.getDatasourceName">getDatasourceName</a>
+                </li>
+            
+                <li data-name="gaia.Util.getIndex" class="">
+                    <a href="gaia.Util.html#.getIndex">getIndex</a>
+                </li>
+            
+                <li data-name="gaia.Util.transferCoordinate" class="">
+                    <a href="gaia.Util.html#.transferCoordinate">transferCoordinate</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.events">
+            <span class="title">
+                <a href="gaia.events.html">gaia.events</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.events.Event">
+            <span class="title">
+                <a href="gaia.events.Event.html">gaia.events.Event</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.interaction">
+            <span class="title">
+                <a href="gaia.interaction.html">gaia.interaction</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.interaction.Interaction">
+            <span class="title">
+                <a href="gaia.interaction.Interaction.html">gaia.interaction.Interaction</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.interaction.Interaction#active" class="">
+                    <a href="gaia.interaction.Interaction.html#active">active</a>
+                </li>
+            
+                <li data-name="gaia.interaction.Interaction#deactive" class="">
+                    <a href="gaia.interaction.Interaction.html#deactive">deactive</a>
+                </li>
+            
+                <li data-name="gaia.interaction.Interaction#getSelectedFeature" class="">
+                    <a href="gaia.interaction.Interaction.html#getSelectedFeature">getSelectedFeature</a>
+                </li>
+            
+                <li data-name="gaia.interaction.Interaction#setSelectedFeature" class="">
+                    <a href="gaia.interaction.Interaction.html#setSelectedFeature">setSelectedFeature</a>
+                </li>
+            
+                <li data-name="gaia.interaction.Interaction#setUnselected" class="">
+                    <a href="gaia.interaction.Interaction.html#setUnselected">setUnselected</a>
+                </li>
+            
+                <li data-name="gaia.interaction.Interaction#updateSelectedFeature" class="">
+                    <a href="gaia.interaction.Interaction.html#updateSelectedFeature">updateSelectedFeature</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer">
+            <span class="title">
+                <a href="gaia.layer.html">gaia.layer</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.AMap">
+            <span class="title">
+                <a href="gaia.layer.AMap.html">gaia.layer.AMap</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.AMap#layer"><a href="gaia.layer.AMap.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.AMap#mapControl"><a href="gaia.layer.AMap.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.AMap#source"><a href="gaia.layer.AMap.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.AMap#dispose" class="">
+                    <a href="gaia.layer.AMap.html#dispose">dispose</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.Layer">
+            <span class="title">
+                <a href="gaia.layer.Layer.html">gaia.layer.Layer</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.Layer#layer"><a href="gaia.layer.Layer.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.Layer#mapControl"><a href="gaia.layer.Layer.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.Layer#source"><a href="gaia.layer.Layer.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.Layer#dispose" class="">
+                    <a href="gaia.layer.Layer.html#dispose">dispose</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.Measure">
+            <span class="title">
+                <a href="gaia.layer.Measure.html">gaia.layer.Measure</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.Measure#enabled"><a href="gaia.layer.Measure.html#enabled">enabled</a></li>
+            
+                <li data-name="gaia.layer.Measure#layer"><a href="gaia.layer.Measure.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.Measure#mapControl"><a href="gaia.layer.Measure.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.Measure#source"><a href="gaia.layer.Measure.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.Measure#disableMeasure" class="">
+                    <a href="gaia.layer.Measure.html#disableMeasure">disableMeasure</a>
+                </li>
+            
+                <li data-name="gaia.layer.Measure#dispose" class="">
+                    <a href="gaia.layer.Measure.html#dispose">dispose</a>
+                </li>
+            
+                <li data-name="gaia.layer.Measure#enableMeasure" class="">
+                    <a href="gaia.layer.Measure.html#enableMeasure">enableMeasure</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            <span class="subtitle">Fires</span>
+            
+                <li data-name="gaia.events.Event#event:postlayer" class="">
+                    <a href="gaia.events.Event.html#event:postlayer">postlayer</a>
+                </li>
+            
+                <li data-name="gaia.events.Event#event:select" class="">
+                    <a href="gaia.events.Event.html#event:select">select</a>
+                </li>
+            
+                <li data-name="gaia.events.Event#event:unselect" class="">
+                    <a href="gaia.events.Event.html#event:unselect">unselect</a>
+                </li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.OSM">
+            <span class="title">
+                <a href="gaia.layer.OSM.html">gaia.layer.OSM</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.OSM#layer"><a href="gaia.layer.OSM.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.OSM#mapControl"><a href="gaia.layer.OSM.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.OSM#source"><a href="gaia.layer.OSM.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.OSM#dispose" class="">
+                    <a href="gaia.layer.OSM.html#dispose">dispose</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.Tianditu">
+            <span class="title">
+                <a href="gaia.layer.Tianditu.html">gaia.layer.Tianditu</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.Tianditu#layer"><a href="gaia.layer.Tianditu.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.Tianditu#mapControl"><a href="gaia.layer.Tianditu.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.Tianditu#source"><a href="gaia.layer.Tianditu.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.Tianditu#dispose" class="">
+                    <a href="gaia.layer.Tianditu.html#dispose">dispose</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="gaia.layer.Vector">
+            <span class="title">
+                <a href="gaia.layer.Vector.html">gaia.layer.Vector</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="gaia.layer.Vector#layer"><a href="gaia.layer.Vector.html#layer">layer</a></li>
+            
+                <li data-name="gaia.layer.Vector#mapControl"><a href="gaia.layer.Vector.html#mapControl">mapControl</a></li>
+            
+                <li data-name="gaia.layer.Vector#source"><a href="gaia.layer.Vector.html#source">source</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="gaia.layer.Vector#dispose" class="">
+                    <a href="gaia.layer.Vector.html#dispose">dispose</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            <span class="subtitle">Fires</span>
+            
+                <li data-name="gaia.events.Event#event:postlayer" class="">
+                    <a href="gaia.events.Event.html#event:postlayer">postlayer</a>
+                </li>
+            
+                <li data-name="gaia.events.Event#event:select" class="">
+                    <a href="gaia.events.Event.html#event:select">select</a>
+                </li>
+            
+                <li data-name="gaia.events.Event#event:unselect" class="">
+                    <a href="gaia.events.Event.html#event:unselect">unselect</a>
+                </li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="ol.overlay.Popup">
+            <span class="title">
+                <a href="ol.overlay.Popup.html">ol.overlay.Popup</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="ol.overlay.Popup#hide" class="">
+                    <a href="ol.overlay.Popup.html#hide">hide</a>
+                </li>
+            
+                <li data-name="ol.overlay.Popup#isOpened" class="">
+                    <a href="ol.overlay.Popup.html#isOpened">isOpened</a>
+                </li>
+            
+                <li data-name="ol.overlay.Popup#show" class="">
+                    <a href="ol.overlay.Popup.html#show">show</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="ol.render3D">
+            <span class="title">
+                <a href="ol.render3D.html">ol.render3D</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="ol.render3D#animate" class="">
+                    <a href="ol.render3D.html#animate">animate</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="ol.source.AMap">
+            <span class="title">
+                <a href="ol.source.AMap.html">ol.source.AMap</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="ol.source.Tianditu">
+            <span class="title">
+                <a href="ol.source.Tianditu.html">ol.source.Tianditu</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="ol.source.Tianditu.default3857TileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.default3857TileGrid">default3857TileGrid</a>
+                </li>
+            
+                <li data-name="ol.source.Tianditu.default4326TileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.default4326TileGrid">default4326TileGrid</a>
+                </li>
+            
+                <li data-name="ol.source.Tianditu.getTileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.getTileGrid">getTileGrid</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="ol.source.Tianditu">
+            <span class="title">
+                <a href="ol.source.Tianditu.html">ol.source.Tianditu</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="ol.source.Tianditu.default3857TileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.default3857TileGrid">default3857TileGrid</a>
+                </li>
+            
+                <li data-name="ol.source.Tianditu.default4326TileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.default4326TileGrid">default4326TileGrid</a>
+                </li>
+            
+                <li data-name="ol.source.Tianditu.getTileGrid" class="">
+                    <a href="ol.source.Tianditu.html#.getTileGrid">getTileGrid</a>
+                </li>
+            
+            </ul>
+            <ul class="fires itemMembers">
+            
+            </ul>
+        </li>
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="gaia.layer.Layer.html">Class: Layer</h1>
+        <div id="latest-check" class="alert alert-warning alert-dismissible" role="alert" style="display:none">
+          <button id="latest-dismiss" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          This documentation is for OpenLayers v<span id="package-version"></span>. The <a id="latest-link" href="#" class="alert-link">latest</a> is v<span id="latest-version"></span>.
+        </div>
+        
+
+
+
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="gaia.html">gaia</a><a href="gaia.layer.html">.layer</a>.</span>Layer
+    </h2>
+    <br>
+    
+    <pre class="prettyprint source"><code>import Layer from '<a href="gaia.html">gaia</a>/<a href="gaia.layer.html">layer</a>/layer';</code></pre>
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt class="">
+    <div class="nameContainer">
+        
+        <div class="anchor" id="Layer">
+        </div>
+        <h4 class="name">
+            new gaia.layer.Layer<span class="signature">(options)</span>
+            
+            
+
+        </h4>
+        
+        <div class="tag-source">
+            gaia/layer/layer.js, line 4
+        </div>
+        
+        
+    </div>
+    
+</dt>
+<dd class="">
+
+    
+    <div class="description">
+        <p>图层基类</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            
+            
+            <td colspan=2 class="description last">
+                
+                <p>参数</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr class="">
+            
+                <td class="name"><code>controlId</code></td>
+            
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            <td  class="description last">
+                
+                <p>mapControl的Id</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Subclasses</h3>
+        <ul>
+          <li><a href="gaia.layer.AMap.html">gaia.layer.AMap</a>
+            
+          </li>
+        
+          <li><a href="gaia.layer.OSM.html">gaia.layer.OSM</a>
+            
+          </li>
+        
+          <li><a href="gaia.layer.Tianditu.html">gaia.layer.Tianditu</a>
+            
+          </li>
+        
+          <li><a href="gaia.layer.Vector.html">gaia.layer.Vector</a>
+            
+          </li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="layer">
+        </div>
+        <h4 class="name">
+            layer<span class="type-signature type ol.layer.vector">{ol.layer.Vector}</span> <span class="type-signature type ol.layer.image">{ol.layer.Image}</span> <span class="type-signature type ol.layer.tile">{ol.layer.Tile}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>ol的<a href="http://openlayers.org/en/latest/apidoc/ol.layer.Vector.html">ol.layer.Vector</a>|<a href="http://openlayers.org/en/latest/apidoc/ol.layer.Image.html">ol.layer.Image</a>|<a href="http://openlayers.org/en/latest/apidoc/ol.layer.Tile.html">ol.layer.Tile</a>图层，不允许外界修改</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="mapControl">
+        </div>
+        <h4 class="name">
+            mapControl<span class="type-signature type gaia.mapcontrol">{<a href="gaia.MapControl.html">gaia.MapControl</a>}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>当前图层所属的MapControl实例对象</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt class="">
+    <div class="nameContainer">
+        <div class="anchor" id="source">
+        </div>
+        <h4 class="name">
+            source<span class="type-signature type ol.source.source">{ol.source.Source}</span> 
+            
+
+        </h4>
+    </div>
+    
+</dt>
+<dd class="">
+    
+    <div class="description">
+        <p>ol图层的<a href="http://openlayers.org/en/latest/apidoc/ol.source.Source.html">source</a>，不允许外界修改</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt class="">
+    <div class="nameContainer">
+        
+        <div class="anchor" id="dispose">
+        </div>
+        <h4 class="name">
+            dispose<span class="signature">()</span>
+            
+            
+
+        </h4>
+        
+        <div class="tag-source">
+            gaia/layer/layer.js, line 51
+        </div>
+        
+        
+    </div>
+    
+</dt>
+<dd class="">
+
+    
+    <div class="description">
+        <p>释放所属图层</p>
+    </div>
+    
+
+    
+
+    
+        <h5>This:</h5>
+        <ul><li>{<a href="gaia.layer.Layer.html">gaia.layer.Layer</a>}</li></ul>
+    
+
+    
+    
+    
+
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

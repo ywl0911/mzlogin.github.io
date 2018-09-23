@@ -1,0 +1,198 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>路径跟踪客户端</title>
+    <link rel="stylesheet" href="./js/ol.css" type="text/css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="./js/ol.js"></script>
+    <!-- <script src="js/mqtt.js"></script> -->
+    <script src="./js/mqttws31.min.js" type="text/javascript"></script>
+    <!-- <script src="./js/gaia.geo.map.js"></script> -->
+
+    <style type="text/css">
+        html,
+        body,
+        .map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map1" class="map"></div>
+    <script>
+
+        // function guid() {
+        //     function s4() {
+        //         return Math.floor((1 + Math.random()) * 0x10000)
+        //             .toString(16)
+        //             .substring(1);
+        //     }
+        //     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+        // }
+        var view = new ol.View({
+            center: [0, 0],
+            zoom: 10
+        });
+
+        var map = new ol.Map({
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            target: 'map1',
+            controls: ol.control.defaults({
+                attributionOptions: {
+                    collapsible: false
+                }
+            }),
+            view: view
+        });
+
+        var geolocation = new ol.Geolocation({
+            tracking: true,
+            projection: view.getProjection()
+        });
+
+
+        var positionFeature = new ol.Feature({ speed: '', heading: '' });
+        positionFeature.setStyle(new ol.style.Style({
+            image: new ol.style.Circle({
+                radius: 6,
+                fill: new ol.style.Fill({
+                    color: '#3399CC'
+                }),
+                stroke: new ol.style.Stroke({
+                    color: '#fff',
+                    width: 2
+                })
+            })
+        }));
+
+        // update the HTML page when the position changes.
+        geolocation.on('change', function () {
+
+            const _oHeading = geolocation.getHeading() ? geolocation.getHeading() : 0;
+
+            const _oSpeed = geolocation.getSpeed() ? geolocation.getSpeed() : 0;
+            const _speed = _oSpeed <= 5 ? _oSpeed.toFixed(2) + ' [m/s]' : (_oSpeed * 3.6).toFixed(2) + ' [km/h]'
+
+        });
+
+        // handle geolocation error.
+        geolocation.on('error', function (error) {
+            alert(error.message);
+        });
+
+        var accuracyFeature = new ol.Feature();
+        geolocation.on('change:accuracyGeometry', function () {
+            accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+        });
+
+        var _firstSetCenter = false;
+        geolocation.on('change:position', function () {
+            var coordinates = geolocation.getPosition();
+            if (!_firstSetCenter) {
+                map.getView().setCenter(coordinates);
+                _firstSetCenter = true;
+            }
+
+            positionFeature.setGeometry(coordinates ?
+                new ol.geom.Point(coordinates) : null);
+
+            positionFeature.set('speed', geolocation.getSpeed() + ' [m/s]');
+            positionFeature.set('heading', geolocation.getHeading() + ' [rad]');
+
+
+        });
+
+        const posStyleFun = function (feature) {
+            const _text = feature.get('speed') ? '速度：' + feature.get('speed') : '';
+            return new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 6,
+                    fill: new ol.style.Fill({
+                        color: '#3399CC'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: '#fff',
+                        width: 2
+                    })
+                }),
+                text: new ol.style.Text({
+                    font: 'Bold 13px Verdana',
+                    text: _text,
+                    fill: new ol.style.Fill({
+                        color: '#ffffff'
+                    }),
+                    offsetY: -25,
+                    backgroundFill: new ol.style.Fill({
+                        color: '#6fa0e5'
+                    })
+                })
+            })
+
+        }
+
+
+
+        const posLayer = new ol.layer.Vector({
+            map: map,
+            source: new ol.source.Vector({
+                features: [accuracyFeature, positionFeature]
+            }),
+            style: posStyleFun
+        });
+
+
+        const mqFeatureDic = {};
+        const _clientId = guid();
+        const client = new Paho.MQTT.Client("223.223.198.162", 8083, _clientId);//建立客户端实例  
+        client.connect({ onSuccess: onConnect });//连接服务器并注册连接成功处理事件  
+        function onConnect() {
+            _connected = true;
+            console.log("onConnected");
+            client.subscribe("/geolocation");//订阅主题  
+        }
+        client.onConnectionLost = onConnectionLost;//注册连接断开处理事件  
+        client.onMessageArrived = onMessageArrived;//注册消息接收处理事件  
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("onConnectionLost:" + responseObject.errorMessage);
+                console.log("连接已断开");
+            }
+        }
+        function onMessageArrived(message) {
+            console.log("收到消息:" + message.payloadString);
+            const obj = JSON.parse(message.payloadString);
+            if (obj.clientId && obj.coordinate) {
+                if (mqFeatureDic[obj.clientId] == undefined) {
+                    mqFeatureDic[obj.clientId] = {
+                        positionFeature: new ol.Feature({
+                            geometry: new ol.geom.Point(obj.coordinate),
+                            speed: obj.speed, heading: obj.heading
+                        })
+                    };
+
+                    posLayer.getSource().addFeature(mqFeatureDic[obj.clientId].positionFeature);
+                    map.getView().fit(posLayer.getSource().getExtent());
+                }
+                else {
+                    mqFeatureDic[obj.clientId].positionFeature.setGeometry(obj.coordinate ?
+                        new ol.geom.Point(obj.coordinate) : null);
+                }
+                // mqFeatureDic[obj.clientId].positionFeature.setStyle(posStyleFun);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

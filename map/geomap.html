@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>路径跟踪</title>
+    <link rel="stylesheet" href="./js/ol.css" type="text/css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="./js/ol.js"></script>
+    <!-- <script src="js/mqtt.js"></script> --> 
+    <script src="./js/mqttws31.min.js" type="text/javascript"></script>
+    <script src="./js/gaia.geo.map.js"></script>
+
+    <style type="text/css">
+        html,
+        body,
+        .map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" class="map"></div>
+    <div id="info" style="position: absolute;bottom:5px;right: 5px;;background-color: aliceblue;padding: 0 5px 0 5px;"></div>
+    <div style="position: absolute;top:5px;right: 5px;;background-color: aliceblue;padding: 0 5px 0 5px;">
+
+        <p style="font: italic bold 12px/20px arial,sans-serif">
+            精度:
+            <code id="accuracy"></code>&nbsp;&nbsp; 方向:
+            <code id="heading"></code>&nbsp;&nbsp; 速度:
+            <code id="speed"></code>
+        </p>
+    </div>
+    <script>
+        window.onload = function () {
+            var map = new gaia.GeoMap('map', 2);
+        }
+    </script>
+</body>
+
+</html>

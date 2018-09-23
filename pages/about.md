@@ -1,20 +1,19 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: Warning:nuclear silo detected.
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+I obtained a double B.Sc. degree majoring in management and finance from Zhongnan University of Economy and Law in June 2015. In the same year,
+I was admitted to study for a M.Sc. degree in School of Computer Science and Technology, Harbin Institute of Technology. I was supervised by Prof. [Yunming Ye](http://www.hitsz.edu.cn/teacher/view/id-237.html#) and graduated in 2018.
 
-仰慕「优雅编码的艺术」。
 
-坚信熟能生巧，努力改变人生。
+If you have any questions about my blog, don't hesitate to get in touch with me through my email.
 
-## 联系
+## Contact
 
 {% for website in site.data.social %}
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})

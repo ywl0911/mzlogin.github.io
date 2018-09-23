@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>My Love Letter</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="love/css/default.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="love/js/jquery.js"></script>
+    <script type="text/javascript" src="love/js/garden.js"></script>
+    <script type="text/javascript" src="love/js/functions.js"></script>
+    <script type="text/javascript" src="love/js/snowfall.jquery.js"></script>
+    <!--<script type="text/javascript">
+        $(function () {
+            if ($.browser.msie && $.browser.version == '8.0') {
+                //起初使用<bgsound src="system.wav"/>,结果IE8不播放声音,于是换成了embed
+                $('#copyright').html('<embed src="music/123.mp3"/>');
+            } else {
+                //IE9+,Firefox,Chrome均支持<audio/>
+                $('#copyright').html('<audio autoplay="autoplay";loop=true;controls="controls"><source src="music/LoveletterToYou.mp3" type="audio/mpeg" /></audio>');
+            }
+        });
+    </script>-->
+</head>
+<body>
+    <!--  <div id="topDiv" style="margin-top: 0; background-color: Black; width: 300px; height: 30px;">
+    </div>-->
+    <div id="mainDiv">
+        <div id="content">
+            <script>
+                $(document).snowfall('clear');
+                $(document).snowfall({
+                    image: "love/images/huaban.png",
+                    flakeCount: 60,
+                    minSize: 5,
+                    maxSize: 22
+                });
+            </script>
+
+            <div id="code">
+                <span class="comments">亲爱的：</span><br />
+                <span class="space" /><span class="comments">佛说，<span class="keyword">前世的五百次回眸，才换来今世的一次擦肩而过</span>。</span><br />
+                <span class="space" /><span class="comments">呀，我说我的颈椎怎么这么不好呢，不知前世对你回眸多少次，才换来今世与你的缘分。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">亲爱的，你总说，遇到我是你的幸运。我又何尝不是一个幸运儿，感谢上天将天使一样的你赐予我。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">是你让我知道了什么是真正的<span class="keyword">包容</span>。</span><br />
+                <span class="space" /><span class="comments">是你让我知道了什么是真正的<span class="keyword">牵挂</span>。</span><br />
+                <span class="space" /><span class="comments">是你让我知道了什么是真正的<span class="keyword">守候</span>。</span><br />
+                <span class="space" /><span class="comments">是你让我知道了什么是真正的<span class="keyword">感动</span>。</span><br />
+                <span class="space" /><span class="comments">是你让我知道了什么是真正的<span class="keyword">爱情</span>。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">也许，我不会轰轰烈烈，也许，我不会给你太多的惊喜。</span><br />
+                <span class="space" /><span class="comments">但是，我可以给你平平淡淡的幸福，给你无微不至的呵护。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">也许，我不是最优秀的。</span><br />
+                <span class="space" /><span class="comments">但是，我愿意为你变得更加优秀，努力给你幸福。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">时间还早，路还很长。</span><br />
+                <span class="space" /><span class="comments">接下来的日子，我愿意陪伴你左右，直到永久。</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments">Merry Xmas~~~</span><br />
+                <span class="space" /><span class="comments"></span>
+                <br />
+                <span class="space" /><span class="comments"><span class="keyword">我爱你，杨杨。</span></span><br />
+                <span class="space" /><span class="comments">---------------------------------------------------</span><br />
+                <span class="placeholder" />最后，请查收我送给你的贺卡，百度搜索后面的数字：802348106223<br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        YangYang, I have fallen in love with you for
+                        <div id="elapseClock" style="display: none">
+                        </div>
+                        <a href='#' id="accept">click here if love me</a>
+                    </div>
+                    <div id="loveu">
+                        Love u forever and ever.<br />
+                        <div class="signature">
+                            - Hao
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright" style="display:none">
+            <audio autoplay="autoplay" loop="loop"><source src="love/music/LoveletterToYou.mp3" type="audio/mpeg" /></audio>
+            程序改编: <a href="http://user.qzone.qq.com/825715926/main">Hao</a><br />
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "亲爱的，你的浏览器不支持 HTML5!<br/>请使用 Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 10000);
+
+            $("#accept").click(function () {
+                $(this).hide();
+                $("#elapseClock").show();
+                var together = new Date("2014-08-14");
+                together.setHours(22, 39);
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+            })
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
