@@ -2,26 +2,25 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://yuwen.li
+url: https://yuwen.li
 date_format: "ordinal"
-title: YWL's Blog
-subtitle: "Warning:nuclear silo detected."
-description: "ywl的个人博客"
+title: 码志
+subtitle: "打码改变人生"
+description: "马壮的个人博客"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 2
+side_bar_repo_limit: 5
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Yu Wenli
-organization: somewhere~
-organization_url: http://map.baidu.com?s=%E6%B7%B1%E5%9C%B3
-github_username: ywl0911
-location: Shenzhen, China
-location_url:
-email: yuwenli0911@gmail.com
+author: Zhuang Ma
+organization: zkh360.com
+organization_url: http://www.zkh360.com
+github_username: mzlogin
+location: Wuhan, China
+email: chumpma@gmail.com
 
 # ---------------- #
 #    Navigation    #
