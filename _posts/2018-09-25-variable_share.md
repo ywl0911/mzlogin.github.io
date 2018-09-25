@@ -8,7 +8,7 @@ mathjax: true
 
 ---
 
-Tensorflow中变量的创建和共享方式
+Tensorflow提供了灵活的变量的创建和共享方式，做一些笔记加深理解。
 
 ## 1 变量创建的方式
 tensorflow一般可以由以下3中方式创建变量。
