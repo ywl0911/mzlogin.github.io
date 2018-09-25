@@ -5,7 +5,9 @@ categories: TensorFlow python
 description: Tensorflow中变量的创建和共享方式
 keywords: python TensorFlow
 mathjax: true
+
 ---
+
 Tensorflow中变量的创建和共享方式
 
 ## 1 变量创建的方式
