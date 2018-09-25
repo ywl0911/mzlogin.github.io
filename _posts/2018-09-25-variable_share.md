@@ -6,6 +6,8 @@ description: Tensorflow中变量的创建和共享方式
 keywords: python TensorFlow
 mathjax: true
 ---
+Tensorflow中变量的创建和共享方式
+
 ## 1 变量创建的方式
 tensorflow一般可以由以下3中方式创建变量。
 **1、tf.Variable()**
