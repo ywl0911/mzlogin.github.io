@@ -34,7 +34,7 @@ permalink: /archives/
         {% if thisyear != 1 %}
             </ol>
         {% endif %}
-<h3>{{ post.date | date: '%Y' }} ({{ counts[i] }})</h3>
+<h4>{{ post.date | date: '%Y' }} [{{ counts[i] }}]</h4>
         {% if thisyear != 0 %}
             {% assign thisyear = 0 %}
         {% endif %}
