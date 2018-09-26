@@ -1,6 +1,12 @@
-- name:
+#- name: Algorithm Engineer Keywords
+#  keywords:
+#      - Machine Learning
+#      - NLP
+#      - Data Mining
+#
+- name: Algorithm Engineer Keywords
   keywords:
       - Machine Learning
       - NLP
       - Data Mining
-      
+
