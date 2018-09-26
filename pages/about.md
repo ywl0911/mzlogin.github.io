@@ -17,7 +17,6 @@ If you have any questions about my blog, don't hesitate to email me. At last, re
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
 {% endfor %}
 
-；## Skill Keywords
 
 {% for category in site.data.skills %}
 ### {{ category.name }}
