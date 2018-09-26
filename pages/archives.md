@@ -43,8 +43,9 @@ permalink: /archives/
     {% endif %}
 <li class="posts-list-item">
 <b>
-<span class="posts-list-meta">{{ post.date | date:"%m-%d"}}</span>
-<a class="posts-list-name" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+<a class="posts-list-name" href="{{ site.url }}{{ post.url }}">
+<span class="posts-list-meta">{{ post.date | date:"%m-%d"}}</span>{{ post.title }}
+</a>
 </b>
 </li>
 {% endfor %}
