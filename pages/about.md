@@ -11,6 +11,10 @@ I was admitted to study for a M.Sc. degree in Harbin Institute of Technology. I 
 
 If you have any questions about my blog, don't hesitate to email me. At last, really appreciate [Zhuang Ma](mazhuang.org) providing the blog template.
 
+<center>居中对齐</center>
+
+
+
 ## Contact
 
 {% for website in site.data.social %}
