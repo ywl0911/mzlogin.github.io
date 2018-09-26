@@ -10,7 +10,7 @@ I am a lover of machine learning especially in the field of NLP. I obtained a B.
 I was admitted to study for a M.Sc. degree in Harbin Institute of Technology. I was supervised by Prof. [Yunming Ye](http://homepage.hit.edu.cn/pages/yeyunming) and graduated in 2018.
 
 
-<p align="left">If you have any questions about my blog, don't hesitate to email me. At last, really appreciate [Zhuang Ma](mazhuang.org) providing the blog template.
+<p text-align="justify">If you have any questions about my blog, don't hesitate to email me. At last, really appreciate [Zhuang Ma](mazhuang.org) providing the blog template.
 </p>
 
 
