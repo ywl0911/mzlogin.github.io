@@ -42,10 +42,10 @@ permalink: /archives/
         {% assign i = i | plus: 1 %}
     {% endif %}
 <li class="posts-list-item">
-<font size=5>
+<b>
 <span class="posts-list-meta">{{ post.date | date:"%m-%d"}}</span>
 <a class="posts-list-name" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-</font>
+</b>
 </li>
 {% endfor %}
 </ol>
