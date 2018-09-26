@@ -23,8 +23,8 @@ If you have any questions about my blog, don't hesitate to email me. At last, re
 <div class="btn-inline">
 {% for keyword in category.keywords %}
 <button class="btn btn-outline" type="button">{{ keyword }}</button>
-<br>
-<br>
 {% endfor %}
+<br>
+<br>
 </div>
 {% endfor %}
