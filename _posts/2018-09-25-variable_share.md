@@ -11,7 +11,9 @@ mathjax: true
 计算图像/文本相似度常常会用到Siamese网络，在实现Siamese网络时就会使用到变量的共享机制，Tensorflow提供了灵活的变量的创建和共享方式，做一些笔记加深理解。
 
 ## 1 变量创建的方式
+
 tensorflow一般可以由以下3中方式创建变量。
+
 **1、tf.Variable()**
 ```python
 tf.Variable(initial_value=None,
