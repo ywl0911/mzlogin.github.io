@@ -128,12 +128,12 @@ with tf.variable_scope("plus") as scope:
     scope.reuse_variables()
     o2 = plus_1(1)
 
-    sess.run(tf.global_variables_initializer())
+sess.run(tf.global_variables_initializer())
 
-    print(o1.eval())
-    print(o2.eval())
-    print(o1.name)
-    print(o2.name)
+print(o1.eval())
+print(o2.eval())
+print(o1.name)
+print(o2.name)
 
 >>>[1.2615478]
 >>>[1.2615478]
