@@ -6,10 +6,12 @@ comments: true
 menu: 关于
 permalink: /about/
 ---
-I am a lover of machine learning especially in the field of NLP. I obtained a B.Sc. degree majoring in both management and finance from Zhongnan University of Economy and Law in June 2015. In the same year,
-I was admitted to study for a M.Sc. degree in Harbin Institute of Technology, then graduated in Jan 2018.
 
-If you have any questions about my blog, don't hesitate to email me. At last, really appreciate [Zhuang Ma](http://mazhuang.org) providing the blog template.
+I am a lover of machine learning especially for the field of NLP. In June 2015, I obtained my B.Sc. degree majoring in both management and finance from Zhongnan University of Economy and Law.
+I received my M.Sc. degree in computer science from Harbin Institute of Technology, Shenzhen in Jan 2018. If you have any questions about me or my blog, don't hesitate to email me.
+
+
+At last, really appreciate [Zhuang Ma](http://mazhuang.org) providing the blog template.
 
 
 
