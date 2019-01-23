@@ -46,7 +46,7 @@ INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和�
 
 **文氏图：**
 
-![INNER JOIN](https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/database/inner-join.png)
+![INNER JOIN](https://raw.githubusercontent.com/mzlogin/mzlogin.github.io/master/images/posts/database/inner-join111.png)
 
 **示例查询：**
 
@@ -107,7 +107,7 @@ RIGHT JOIN 一般被译作右连接，也写作 RIGHT OUTER JOIN。右连接查�
 
 **文氏图：**
 
-![RIGHT JOIN](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/right-join111.png)
+![RIGHT JOIN](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/right-join.png)
 
 **示例查询：**
 
