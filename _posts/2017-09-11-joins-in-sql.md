@@ -107,7 +107,7 @@ RIGHT JOIN 一般被译作右连接，也写作 RIGHT OUTER JOIN。右连接查�
 
 **文氏图：**
 
-![RIGHT JOIN](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/right-join.png)
+![RIGHT JOIN](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/right-join111.png)
 
 **示例查询：**
 
