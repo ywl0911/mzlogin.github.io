@@ -17,7 +17,7 @@ Jesen不等式的内容大概如下：
 
 $$f(\lambda_1x_1+\lambda_2x_2)\leq\lambda_1f(x_1)+\lambda_2f(x_2)$$
 
-当且仅当$x_1=x_2$时取等号，证明可见[这里](https://en.wikipedia.org/wiki/Jensen%27s_inequality)。简单来说就是$f(E(X)) \leq E(f(X))$，期望的函数小于等于函数的期望。
+当且仅当$ x_1=x_2 $时取等号，证明可见[这里](https://en.wikipedia.org/wiki/Jensen%27s_inequality)。简单来说就是$f(E(X)) \leq E(f(X))$，期望的函数小于等于函数的期望。
 Jensen不等式内容虽然不多，但是可以推导出很多其他的不等式。例如不等$a+b\geq2\sqrt{ab}$，令$f(x)=\ln x,\lambda_1=\lambda_2=0.5$即可推导出来。
 
 
