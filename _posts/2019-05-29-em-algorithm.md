@@ -236,7 +236,7 @@ Repeat
 
 &emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta)$$\\
 
-&emsp;Given $${Q_i(z^{(i)})}$$
+&emsp;Given $${Q_i(z^{(i)})}$$ \\
 
 &emsp;&emsp;  $$\theta:= \arg \max\limits_{\theta} \sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}$$
 
