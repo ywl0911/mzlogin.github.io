@@ -140,17 +140,27 @@ Repeat
 Given $$\mu_1,\mu_2,\sigma_1,\sigma_2,\pi_1,\pi_2$$
 
 &emsp; $$calculate$$ $$f_1(x_1),f_1(x_2),...,f_1(x_n)$$
+
 &emsp; $$calculate$$ $$f_2(x_1),f_2(x_2),...,f_2(x_n)$$
+
 &emsp; $$calculate$$ $$p_1(x_1),p_1(x_2),...,p_1(x_n)$$
+
 &emsp; $$calculate$$ $$p_2(x_1),p_2(x_2),...,p_2(x_n)$$
 
 Given all $$f_1(·),f_2(·),p_1(·),p_2(·)$$ update $$\mu_1,\mu_2,\sigma_1,\sigma_2,\pi_1,\pi_2$$
+
 &emsp;$$\mu_1=\frac{1}{\sum_{i=1}^{n}p_1(x_i)}\sum_{i=1}^{n}x_ip_1(x_i)$$
+
 &emsp;$$\mu_2=\frac{1}{\sum_{i=1}^{n}p_2(x_i)}\sum_{i=1}^{n}x_ip_2(x_i)$$
+
 &emsp;$$\sigma_1^2=\frac{1}{\sum_{i=1}^{n}p_1(x_i)}\sum_{i=1}^{n}p_1(x_i)(x_i-\mu_1)^2$$
+
 &emsp;$$\sigma_2^2=\frac{1}{\sum_{i=1}^{n}p_2(x_i)}\sum_{i=1}^{n}p_2(x_i)(x_i-\mu_2)^2$$
+
 &emsp;$$\pi_1=\frac{\sum_{i=1}^{n}p_1(x_i)}{n}$$
+
 &emsp;$$\pi_2=\frac{\sum_{i=1}^{n}p_2(x_i)}{n}$$
+
 }until $$\mu_1,\mu_2,\sigma_1,\sigma_2,\pi_1,\pi_2$$ convergence
 
 如果随机变量$$X$$由$$K$$个高斯分布产生，则通用表示为：
@@ -159,14 +169,20 @@ Repeat
 {
 E-Step：通过observed data和现有模型估计参数估计值 missing data；
 &emsp;Given $$\mu_k,\sigma_k,\pi_k$$
+
 &emsp;计算：
+
 &emsp;$$f_k(x_i)=N(x_i|\mu_k,\sigma_k)$$
+
 &emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i|\mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i|\mu_j,\sigma_j)}}$$
 
 M-Step：假设missing data已知的情况下，极大化似然函数。
 &emsp;Given all $$f_k(·),p_k(·),g_k(·)$$ update $$\mu_k,\sigma_k,\sigma_k,\pi_k$$
+
 &emsp;$$\mu_k=\frac{1}{\sum_{i=1}^{n}p_k(x_i)}\sum_{i=1}^{n}g_k(x_i)$$
+
 &emsp;$$\sigma_k^2=\frac{1}{\sum_{i=1}^{n}p_k(x_i)}\sum_{i=1}^{n}p_k(x_i)(x_i-\mu_k)(x_i-\mu_k)^T$$
+
 &emsp;$$\pi_k=\frac{\sum_{i=1}^{n}p_k(x_i)}{n}$$
 }until $$\mu_k,\sigma_k,\pi_k$$ convergence
 
