@@ -14,7 +14,7 @@ mathjax: true
 ![Jesen](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/jensen.gif)
 
 Jesen不等式的内容大概如下：
-若$$f(x)$$是区间$$[x_1,x_2]$$上的凸函数，若$$\lambda_1,\lambda_2$$满足$$0\leq\lambda_1,\lambda_2\leq1=\lambda_1+\lambda_2$$，有不等式:
+若$$f(x)$$是区间$$[x_1,x_2]$$上的凸函数，若$$\lambda_1,\lambda_2$$满足$$0\leq\lambda_1,\lambda_2\leq1=\lambda_1+\lambda_2$$，则有不等式:
 
 $$f(\lambda_1x_1+\lambda_2x_2)\leq\lambda_1f(x_1)+\lambda_2f(x_2)$$
 
