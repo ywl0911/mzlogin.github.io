@@ -220,7 +220,9 @@ $$J(Q,\theta)$$为$$L(\theta)$$的下界，我们通过调整$$\theta和Q$$来�
 在给定的$$\theta^{(i)}$$的情况下，通过调整$$Q(z)$$，使下界$$J(Q,\theta)$$上升与$$L(\theta)$$在$$\theta^{(i)}$$处相切，此时$$J(Q,\theta)$$等于$$L(\theta)$$。因为$$\ln$$为严格的凹函数，根据Jesen不等式的特性，等号成立的条件为当且仅当$$\frac{p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}$$为一个常量，即：
 
 $$\frac{p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}=c \Rightarrow$$
+
 $$c=\frac{\sum_{z^{(i)}}{p(x^{(i)},z^{(i)};\theta)}}{\sum_{z^{(i)}}{Q_i(z^{(i)})}}=\frac{p(x^{(i)};\theta)}1={p(x^{(i)};\theta)} \Rightarrow$$
+
 $${Q_i(z^{(i)})}=\frac{p(x^{(i)},z^{(i)};\theta)}{p(x^{(i)};\theta)}=p(z^{(i)}|x^{(i)};\theta)$$
 
 当$${Q_i(z^{(i)})}=p(z^{(i)}|x^{(i)};\theta)$$，$$J(Q,\theta)$$会增加到与$$L(\theta)$$相等。下一步在$${Q_i(z^{(i)})}=p(z^{(i)}|x^{(i)};\theta)$$的情况下，调整参数$$\theta$$来求$$J(Q,\theta)$$的极大值进一步极大化$$L(\theta)$$。
@@ -229,10 +231,15 @@ $${Q_i(z^{(i)})}=\frac{p(x^{(i)},z^{(i)};\theta)}{p(x^{(i)};\theta)}=p(z^{(i)}|x
 
 Repeat
 {
+
 &emsp;Given $$\theta$$
+
 &emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta)$$
+
 &emsp;Given $${Q_i(z^{(i)})}$$
+
 &emsp;&emsp;  $$\theta:= \arg \max\limits_{\theta} \sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}$$
+
 }until $${L(\theta)}$$ convergence
 
 图示如下：
