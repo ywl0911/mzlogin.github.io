@@ -232,9 +232,9 @@ $${Q_i(z^{(i)})}=\frac{p(x^{(i)},z^{(i)};\theta)}{p(x^{(i)};\theta)}=p(z^{(i)}|x
 Repeat
 {
 
-&emsp;Given $$\theta$$
+&emsp;Given $$\theta$$\\
 
-&emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta)$$
+&emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta)$$\\
 
 &emsp;Given $${Q_i(z^{(i)})}$$
 
