@@ -244,6 +244,7 @@ Repeat
 }until $${L(\theta)}$$ convergence
 
 图示如下：
+
 ![GMM](https://images0.cnblogs.com/blog/540980/201307/19012051-44db08d0d7c649a886f6d60acd853fc9.png)
 
 ## 3 收敛性证明
