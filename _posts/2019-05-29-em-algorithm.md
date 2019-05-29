@@ -8,7 +8,7 @@ mathjax: true
 
 ---
 
-# 1 预备知识及问题的引出
+## 1 预备知识
 **Jesen不等式**
 
 ![Jesen](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/jensen.gif)
@@ -138,7 +138,7 @@ M-Step：假设missing data已知的情况下，最大化似然函数。
 以上即为EM算法在高斯混合模型中的应用，直观的变化可以参考如下的变化过程：
 ![GMM](http://www.csuldw.com/assets/articleImg/2015-12-02-EM_Clustering_of_Old_Faithful_data.gif)
 
-# 2 EM算法导出
+## 2 EM算法导出
 
 观测到$$n$$个相互独立的样本$$\{x(1),…,x(m)\}$$，根据这些数据我们想要拟合模型$$p(x,z)$$，$$z$$为隐变量，如何估计模型的最佳参数呢。
 首先写出对数似然函数：
@@ -175,7 +175,7 @@ Repeat
 图示如下：
 ![GMM](https://images0.cnblogs.com/blog/540980/201307/19012051-44db08d0d7c649a886f6d60acd853fc9.png)
 
-# 3 收敛性证明
+## 3 收敛性证明
 假定$$θ^{(t)}$$和$$θ^{(t+1)}$$是EM第$$t$$次和$$t+1$$次迭代后的结果。如果我们证明了$$L(θ^{(t+1)})\geq L(θ^{(t)})$$，也就是说极大似然估计单调增加，那么最终我们就会得到极大似然估计的最大值。
 下面来证明，在选定$$θ^{(t)}$$之后，E步的操作为：
 $${Q_i^{(t)}(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta^{(t)})$$
