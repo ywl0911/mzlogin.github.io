@@ -12,7 +12,7 @@ mathjax: true
 
 ## 1 变量创建的方式
 
-tensorflow一般可以由以下3中方式创建变量$x$。
+tensorflow一般可以由以下3中方式创建变量。
 
 **1、tf.Variable()**
 ```python
