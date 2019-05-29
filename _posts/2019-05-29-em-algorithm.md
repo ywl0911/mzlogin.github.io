@@ -167,6 +167,7 @@ Given all $$f_1(·),f_2(·),p_1(·),p_2(·)$$ update $$\mu_1,\mu_2,\sigma_1,\sig
 
 Repeat
 {
+
 E-Step：通过observed data和现有模型估计参数估计值 missing data；
 
 &emsp;Given $$\mu_k,\sigma_k,\pi_k$$
