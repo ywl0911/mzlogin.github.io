@@ -71,18 +71,18 @@ $$\mu=\frac 1 n \sum_{i=1}^{n}x_i= \bar x
 
 已知同学的身高由两个高斯分布产生，那么先假设样本$$x$$由两个高斯分布产生的概率分别为$$\pi_1,\pi_2$$，两个高斯分布的参数先随便给定为$$(\mu_1,\sigma_1),(\mu_2,\sigma_2)$$，那么样本$$x$$产生的先验概率为：
 
-$$p(x)=\sum_{k=1}^2p(k)p(x|k)=\pi_1N(x|\mu_1,\sigma_1)+\pi_2N(x|\mu_2,\sigma_2)$$
+$$p(x)=\sum_{k=1}^2p(k)p(x\vertk)=\pi_1N(x\vert\mu_1,\sigma_1)+\pi_2N(x\vert\mu_2,\sigma_2)$$
 
 其中$$p(k)=\pi_k$$为样本由第$$k$$个高斯分布产生的概率，$$\pi_1+\pi_2=1$$。
 可以得到似然函数：
 
-$$L(\mu,\sigma^2)=\prod_{i=1}^{n} p(x_i)=\prod_{i=1}^{n}[\pi_1N(x_i|\mu_1,\sigma_1)+\pi_2N(x_i|\mu_2,\sigma_2)]$$
+$$L(\mu,\sigma^2)=\prod_{i=1}^{n} p(x_i)=\prod_{i=1}^{n}[\pi_1N(x_i\vert\mu_1,\sigma_1)+\pi_2N(x_i\vert\mu_2,\sigma_2)]$$
 
 两边取对数可得到对数似然函数：
 
 $$F(\mu,\sigma^2)=\ln L(\mu,\sigma^2)=\sum_{i=1}^{n}\ln p(x_i)
 \\
-=\sum_{i=1}^{n}\ln [\pi_1N(x_i|\mu_1,\sigma_1)+\pi_2N(x_i|\mu_2,\sigma_2)]\\
+=\sum_{i=1}^{n}\ln [\pi_1N(x_i\vert\mu_1,\sigma_1)+\pi_2N(x_i\vert\mu_2,\sigma_2)]\\
 =\sum_{i=1}^{n}\ln
 (\pi_1\frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x_i-\mu_1)^2}{2\sigma^2_1}}+ \pi_2\frac{1}{\sqrt{2\pi}\sigma_2}e^{-\frac{(x_i-\mu_2)^2}{2\sigma^2_2}})
 $$
@@ -177,7 +177,7 @@ E-Step：通过observed data和现有模型估计参数估计值 missing data；
 
 &emsp;$$f_k(x_i)=N(x_i$$ &#124; $$\mu_k,\sigma_k)$$
 
-&emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i \vert \mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i *** \mu_j,\sigma_j)}}$$
+&emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i \vert \mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i \vert \mu_j,\sigma_j)}}$$
 
 M-Step：假设missing data已知的情况下，极大化似然函数。
 &emsp;Given all $$f_k(·),p_k(·),g_k(·)$$ update $$\mu_k,\sigma_k,\sigma_k,\pi_k$$
@@ -224,9 +224,9 @@ $$\frac{p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}=c \Rightarrow$$
 
 $$c=\frac{\sum_{z^{(i)}}{p(x^{(i)},z^{(i)};\theta)}}{\sum_{z^{(i)}}{Q_i(z^{(i)})}}=\frac{p(x^{(i)};\theta)}1={p(x^{(i)};\theta)} \Rightarrow$$
 
-$${Q_i(z^{(i)})}=\frac{p(x^{(i)},z^{(i)};\theta)}{p(x^{(i)};\theta)}=p(z^{(i)}|x^{(i)};\theta)$$
+$${Q_i(z^{(i)})}=\frac{p(x^{(i)},z^{(i)};\theta)}{p(x^{(i)};\theta)}=p(z^{(i)}\vertx^{(i)};\theta)$$
 
-当$${Q_i(z^{(i)})}=p(z^{(i)}|x^{(i)};\theta)$$，$$J(Q,\theta)$$会增加到与$$L(\theta)$$相等。下一步在$${Q_i(z^{(i)})}=p(z^{(i)}|x^{(i)};\theta)$$的情况下，调整参数$$\theta$$来求$$J(Q,\theta)$$的极大值进一步极大化$$L(\theta)$$。
+当$${Q_i(z^{(i)})}=p(z^{(i)}\vertx^{(i)};\theta)$$，$$J(Q,\theta)$$会增加到与$$L(\theta)$$相等。下一步在$${Q_i(z^{(i)})}=p(z^{(i)}\vertx^{(i)};\theta)$$的情况下，调整参数$$\theta$$来求$$J(Q,\theta)$$的极大值进一步极大化$$L(\theta)$$。
 
 至此，我们推出了在给定参数$$\theta$$后，使下界拉升的$${Q(z)}$$的计算公式，此步就是EM算法的E-step，目的是建立$${L(\theta)}$$的下界的极大值。接下来的M-step，目的是在给定$${Q(z)}$$后，通过调整$$\theta$$，进一步极大化$${L(\theta)}$$的下界。此过程即为EM算法的E-step & M-step，完整的流程如下：
 
@@ -235,7 +235,7 @@ Repeat
 
 &emsp;Given $$\theta$$
 
-&emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta)$$
+&emsp;&emsp;  $${Q_i(z^{(i)})}:=p(z^{(i)}\vertx^{(i)};\theta)$$
 
 &emsp;Given $${Q_i(z^{(i)})}$$
 
@@ -251,7 +251,7 @@ Repeat
 假定$$θ^{(t)}$$和$$θ^{(t+1)}$$是EM第$$t$$次和$$t+1$$次迭代后的结果。如果我们证明了$$L(θ^{(t+1)})\geq L(θ^{(t)})$$，也就是说极大似然估计单调增加，那么最终我们就会得到极大似然估计的极大值。
 下面来证明，在选定$$θ^{(t)}$$之后，E步的操作为：
 
-$${Q_i^{(t)}(z^{(i)})}:=p(z^{(i)}|x^{(i)};\theta^{(t)})$$
+$${Q_i^{(t)}(z^{(i)})}:=p(z^{(i)}\vertx^{(i)};\theta^{(t)})$$
 
 这一步保证了Jesen不等式等号成立：
 
