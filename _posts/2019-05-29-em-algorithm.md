@@ -177,7 +177,7 @@ E-Step：通过observed data和现有模型估计参数估计值 missing data；
 
 &emsp;$$f_k(x_i)=N(x_i$$ &#124; $$\mu_k,\sigma_k)$$
 
-&emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i|\mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i|\mu_j,\sigma_j)}}$$
+&emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i$$ &#124; $$\mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i$$ &#124; $$\mu_j,\sigma_j)}}$$
 
 M-Step：假设missing data已知的情况下，极大化似然函数。
 &emsp;Given all $$f_k(·),p_k(·),g_k(·)$$ update $$\mu_k,\sigma_k,\sigma_k,\pi_k$$
