@@ -180,6 +180,7 @@ E-Step：通过observed data和现有模型估计参数估计值 missing data；
 &emsp;$$p_k(x_i)=\frac{\pi_k × f_k(x_i)}{\sum_{j=1}^{K}{\pi_j×f_j(x_i)}}=\frac{\pi_k ×N(x_i \vert \mu_k,\sigma_k)}{\sum_{j=1}^{K}{\pi_j×N(x_i \vert \mu_j,\sigma_j)}}$$
 
 M-Step：假设missing data已知的情况下，极大化似然函数。
+
 &emsp;Given all $$f_k(·),p_k(·),g_k(·)$$ update $$\mu_k,\sigma_k,\sigma_k,\pi_k$$
 
 &emsp;$$\mu_k=\frac{1}{\sum_{i=1}^{n}p_k(x_i)}\sum_{i=1}^{n}g_k(x_i)$$
@@ -245,7 +246,7 @@ Repeat
 
 图示如下：
 
-![GMM](https://images0.cnblogs.com/blog/540980/201307/19012051-44db08d0d7c649a886f6d60acd853fc9.png)
+![GMM2](https://images0.cnblogs.com/blog/540980/201307/19012051-44db08d0d7c649a886f6d60acd853fc9.png)
 
 ## 3 收敛性证明
 假定$$θ^{(t)}$$和$$θ^{(t+1)}$$是EM第$$t$$次和$$t+1$$次迭代后的结果。如果我们证明了$$L(θ^{(t+1)})\geq L(θ^{(t)})$$，也就是说极大似然估计单调增加，那么最终我们就会得到极大似然估计的极大值。
