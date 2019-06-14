@@ -267,8 +267,8 @@ $$\theta^{(t+1)}= \arg \max\limits_{\theta} \sum_{i=1}^{n} \sum_{z^{(i)}}Q_i^{(t
 
 $$L(\theta^{(t+1)})\geq
 \sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta^{(t+1)})}{Q_i(z^{(i)})}
- \geq
-\sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta^{(t)})}{Q_i(z^{(i)})}
-=L(\theta^{(t)})$$
+ \geq$$
+$$
+\sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta^{(t)})}{Q_i(z^{(i)})}=L(\theta^{(t)})$$
 
 至此就证明了$$L(\theta^{(t+1)})\geq L(\theta^{(t)})$$，说明在每一轮EM之后似然函数$$L(θ)$$单调递增，收敛性得证。
