@@ -9,11 +9,11 @@ mathjax: true
 ---
 
 ## 1 预备知识
-**Jesen不等式**
+**Jensen不等式**
 
 ![Jesen](https://raw.githubusercontent.com/ywl0911/ywl0911.github.io/master/images/posts/database/jensen.gif)
 
-Jesen不等式的内容大概如下：
+Jensen不等式的内容大概如下：
 若$$f(x)$$是区间$$[x_1,x_2]$$上的凸函数，若$$\lambda_1,\lambda_2$$满足$$0\leq\lambda_1,\lambda_2\leq1=\lambda_1+\lambda_2$$，则有不等式:
 
 $$f(\lambda_1x_1+\lambda_2x_2)\leq\lambda_1f(x_1)+\lambda_2f(x_2)$$
@@ -213,7 +213,7 @@ $$L(\theta)=\sum_{i=1}^{n}\ln \sum_{z^{(i)}}p(x^{(i)},z^{(i)};\theta)
 \sum_{i=1}^{n} \sum_{z^{(i)}}Q_i(z^{(i)})\ln \frac {p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}=J(Q,\theta)
 $$
 
-因为$$\ln$$为凹函数，根据jesen不等式，有：
+因为$$\ln$$为凹函数，根据jensen不等式，有：
 
 $$ \ln E_{z^{(i)}\sim Q_i}\left(\frac{p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}\right) \geq E_{z^{(i)} \sim Q_i}\left(\ln \frac{p(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}\right)$$
 
